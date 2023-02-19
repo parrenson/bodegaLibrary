@@ -102,7 +102,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto: " + "nombre_producto=" + nombre_producto + ", cantidad=" + cantidad + ", valor=" + valor + ", tiempo_despacho=" + tiempo_despacho ;
+        return "Producto: " + "nombre producto: " + nombre_producto + ", cantidad: " + cantidad + ", valor: " + valor + ", tiempo despacho: " + tiempo_despacho+"\n" ;
     }
     
     

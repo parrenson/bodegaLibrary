@@ -11,7 +11,7 @@ import java.util.LinkedList;
  *
  * @author baron
  */
-public class Bodega<T> {
+public class Bodega<T extends Base> {
     public LinkedList<T> pilaProductos;
     
     public Bodega() {

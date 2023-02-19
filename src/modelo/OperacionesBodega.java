@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import bodega.Base;
 import bodega.Bodega;
 import data.Producto;
 
@@ -12,18 +13,20 @@ import data.Producto;
  *
  * @author dlara
  */
-public class OperacionesBodega {
+public class OperacionesBodega<T extends Base> {
     
-    Bodega<Producto> pilaProductos;
     
- public String generarHtml(){
-      
-      Producto salidaProductos = null;
+    
+ public static <T extends Base> String generarHtml(Bodega <T> bodega){
+     
+         Bodega<T> colaDuplicada=new Bodega<>();
+
       String html ="";
-      while(!pilaProductos.estoyvacio()){
-      salidaProductos = pilaProductos.desapilar();
+      while(!colaDuplicada.estoyvacio()){
+      T salidaProductos = colaDuplicada.desapilar();
       html += "<tr>" + salidaProductos.toString() + "</tr>"; 
       }
       return html;
+      
   }
 }
