@@ -5,7 +5,9 @@
  */
 package bodega;
 
+import data.Producto;
 import java.util.LinkedList;
+import modelo.OperacionesBodega;
 
 /**
  *
@@ -29,6 +31,22 @@ public class Bodega<T extends Base> {
     public boolean estoyvacio() {
         return pilaProductos.isEmpty();
     }
+
+  
+//     public static <T extends Base> String generarHtml(Bodega <T> bodega){
+//   
+////         Bodega<T> colaDuplicada=new Bodega<>();
+//Bodega<T> bodegaTemporal = duplicarBodega(bodega);
+//
+//      String html ="";
+//      while(!bodegaTemporal.estoyvacio()){
+//      T salidaProductos = bodegaTemporal.desapilar();
+//      html += "<tr>" + salidaProductos.toString() + "</tr>"; 
+//      }
+//      return html;
+//      
+//  }
+//Bodega<Producto> miBodega = new Bodega<>();
 
     @Override
     public String toString() {

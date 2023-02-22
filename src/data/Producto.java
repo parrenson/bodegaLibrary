@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package data;
-
+import bodega.Base;
 /**
  *
  * @author baron
  */
-public class Producto {
+public class Producto extends Base {
     
     private String nombre_producto;
     private int cantidad;
@@ -102,8 +102,20 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto: " + "nombre producto: " + nombre_producto + ", cantidad: " + cantidad + ", valor: " + valor + ", tiempo despacho: " + tiempo_despacho+"\n" ;
+        return   nombre_producto + "," + cantidad + "," + valor + "," + tiempo_despacho+"\n" ;
     }
     
+
+    public String toString1() {
+       return "Producto: " + "nombre producto: " + nombre_producto + ", cantidad: " + cantidad + ", valor: " + valor + ", tiempo despacho: " + tiempo_despacho+"\n" ; 
+    }
+
+    @Override
+    public Base copy() {
+        return new Producto (nombre_producto,cantidad,valor,tiempo_despacho);
+    }
+    
+
+  
     
 }
