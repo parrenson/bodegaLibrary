@@ -106,9 +106,6 @@ public class Producto extends Base {
     }
     
 
-    public String toString1() {
-       return "Producto: " + "nombre producto: " + nombre_producto + ", cantidad: " + cantidad + ", valor: " + valor + ", tiempo despacho: " + tiempo_despacho+"\n" ; 
-    }
 
     @Override
     public Base copy() {
