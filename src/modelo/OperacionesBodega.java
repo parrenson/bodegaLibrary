@@ -14,81 +14,24 @@ import data.Producto;
  * @author dlara
  */
 public class OperacionesBodega<T> {
+ 
+    public static <T extends Base> String generarHtml(Bodega <T> bodega){
+        Bodega<T> bodegaTemporal = duplicarBodega(bodega);
 
-//    public static String generarHtml(Bodega<Producto> bodega) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-// String html = hacerHtmlpila(miBodega);   
-    
-
-    
- public static <T extends Base> String generarHtml(Bodega <T> bodega){
-         System.out.println(bodega.toString());
-//Bodega<T> duplicarBodega=new Bodega<>();
-Bodega<T> bodegaTemporal = duplicarBodega(bodega);
-    
-      String html ="";
-      while(!bodegaTemporal.estoyvacio()){
-      T e = bodegaTemporal.desapilar();
-      html += "<tr>" + e.toString() + "</tr>";
-      }
-      return html;
-      
-      
-//      html += "<tr><th>nombre de producto</th> <th>Cantidad</th> <th>Valor</th> <th>Tiempo de despacho</th></tr>";
-//      while(!bodegaTemporal.estoyvacio()){
-//      T salidaProductos = bodegaTemporal.desapilar();
-//      
-//      String[] arreglo = salidaProductos.toString().split(",");
-//      
-//      html += "<tr>" + "<td>" +arreglo[0]+ 
-//              "</td>"+ "<td>" +arreglo[1]+ 
-//              "</td>" + "<td>" +arreglo[2]+ 
-//              "</td>" + "<td>" +arreglo[3]+ "</td>" + "</tr>"; 
-//      }
-//      return html;
-      
-  }
- 
- 
-//   public String hacerHtmlpila() {
-//       
-////creamos el metodo, dentro del metodo creamos la instacia de bodega pero no está haciendo nada.   
-////Bodega<T> bodega = new Bodega<>();
-//////Bodega<T> bodega = generarHtml(Bodega<T>);
-//
-//String html = "<HTML><Table border=1 width=100%>";
-////html += OperacionesBodega.generarHtml(Bodega < T >) + "</Table></HTML>";
-//return html;
-//}
-//
-//
-//// public static <T extends Base> String generarHtml(Bodega <T> bodega){
-////     
-////         Bodega<T> colaDuplicada=new Bodega<>();
-////Bodega<T> bodegaTemporal = duplicarBodega(bodega);
-////
-////      String html ="";
-////      while(!bodegaTemporal.estoyvacio()){
-////      T salidaProductos = bodegaTemporal.desapilar();
-////      html += "<tr>" + salidaProductos.toString() + "</tr>"; 
-////      }
-////      return html;
-////      
-////  }
- 
- 
-  public static <T extends Base> Bodega<T> duplicarBodega (Bodega<T> bodegaOriginal){
-  
-      Bodega<T> bodegaDuplicada = new Bodega<>();
-      
-      while (!bodegaOriginal.estoyvacio()){
-      
-      T elemento=bodegaOriginal.desapilar();
-      bodegaDuplicada.apilar(elemento);
-      }
-      
-      return bodegaDuplicada;
-  }
+        String html ="";
+        while(!bodegaTemporal.estoyvacio()){
+            T e = bodegaTemporal.desapilar();
+            html += "<tr>" + e.toString() + "</tr>";
+        }
+        return html;    
+    }
+    public static <T extends Base> Bodega<T> duplicarBodega (Bodega<T> bodegaOriginal){
+        Bodega<T> bodegaDuplicada = new Bodega<>();
+        while (!bodegaOriginal.estoyvacio()){
+            T elemento=bodegaOriginal.desapilar();
+            bodegaDuplicada.apilar(elemento);
+        }
+        return bodegaDuplicada;
+    }
  
 }

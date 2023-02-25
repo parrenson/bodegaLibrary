@@ -104,8 +104,6 @@ public class Producto extends Base {
     public String toString() {
         return   nombre_producto + "," + cantidad + "," + valor + "," + tiempo_despacho+"\n" ;
     }
-    
-
 
     @Override
     public Base copy() {

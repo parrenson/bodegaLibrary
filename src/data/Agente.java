@@ -5,60 +5,79 @@
  */
 package data;
 
+import bodega.Base;
+
 /**
  *
  * @author dayan.lara
  */
 public class Agente {
-     private String nombre;
-    private boolean libre;
-    private long tiempo;
-    private long tiempoTotal;
+    private boolean estado;
+    private int tiempo;
+    private int tiempoTotal;
+    private int cantidadProductos;
+    private double promedio;
+    private int tiempoMayor = 0;
+    private int tiempoMenor = 0;
     
-    public Agente(String nombre) {
-        this.nombre = nombre;
-        this.libre = true;
-        this.tiempo = 0;
-        this.tiempoTotal = 0;
+    public Agente() {}
+
+    public Agente(boolean estado, int tiempo, int tiempoTotal, int cantidadProductos) {
+        this.estado = estado;
+        this.tiempo = tiempo;
+        this.tiempoTotal = tiempoTotal;
+        this.cantidadProductos = cantidadProductos;
     }
 
-    public Agente() {
+    public boolean isEstado() {
+        return estado;
     }
 
-    
-    // Métodos getters y setters
-    public String getNombre() {
-        return nombre;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
-    public boolean isLibre() {
-        return libre;
+    public boolean getEstado() {
+        return estado;
     }
-    
-    public void setLibre(boolean libre) {
-        this.libre = libre;
-    }
-    
-    public long getTiempo() {
+
+    public int getTiempo() {
         return tiempo;
     }
-    
-    public void setTiempo(long tiempo) {
+
+    public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
-    
-    public long getTiempoTotal() {
+
+    public int getTiempoTotal() {
         return tiempoTotal;
     }
-    
-    public void setTiempoTotal(long tiempoTotal) {
+
+    public void setTiempoTotal(int tiempoTotal) {
         this.tiempoTotal = tiempoTotal;
     }
 
-    @Override
-    public String toString() {
-        return "Agente{" + "nombre=" + nombre + ", libre=" + libre + ", tiempo=" + tiempo + ", tiempoTotal=" + tiempoTotal + '}';
+    public int getCantidadProductos() {
+        return cantidadProductos;
+    }
+
+    public void setCantidadProductos(int cantidadProductos) {
+        this.cantidadProductos = cantidadProductos;
+    }
+    public void calcularTiempoTotal() {
+        tiempoTotal += tiempo;
+    }
+    public void calcularTotalProductos() {
+        cantidadProductos += 1;
+    }
+    public void calcularTiempoMayor() {
+        cantidadProductos += 1;
     }
     
+    @Override
+    public String toString() {
+        return "Agente{" + "estado=" + estado + ", tiempo=" + tiempo + ", tiempoTotal=" + tiempoTotal + ", cantidadProductos=" + cantidadProductos + '}';
+    }
+
     
 }
